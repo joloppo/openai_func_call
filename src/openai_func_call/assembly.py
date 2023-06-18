@@ -7,7 +7,7 @@ from pydantic.fields import ModelField
 from pydantic.main import BaseModel
 from typing_extensions import Literal as ExtensionLiteral
 
-from openai_funcpass.function_parsing import create_model_for_func_params, get_viable_docstring
+from openai_func_call.function_parsing import create_model_for_func_params, get_viable_docstring
 
 
 class CallableFunction(BaseModel):

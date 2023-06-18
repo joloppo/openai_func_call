@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "openai-funcpass"
+name = "openai-func-call"
 version = "0.1.0"
 description = "Easily pass python functions to openai function calling."
 authors = ["Jolo- <lockomoto@googlemail.com>"]
 license = "MIT License"
 readme = "README.md"
-packages = [{include = "openai_funcpass", from = "src"}]
+packages = [{include = "openai_func_call", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"

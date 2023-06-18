@@ -3,7 +3,7 @@ from typing import Literal
 
 import json
 
-from openai_funcpass.manager import FunctionManager
+from openai_func_call.manager import FunctionManager
 
 
 class TemperatureUnit(str, Enum):
