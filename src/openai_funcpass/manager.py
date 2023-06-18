@@ -41,15 +41,17 @@ class QueryState(BaseModel):
 class FunctionManager:
     max_func_calls: Optional[int]
 
-    def __init__(self, functions: list[Callable]):
+    def __init__(
+        self, functions: list[Callable], max_func_calls: Optional[int] = None, max_tokens_used: Optional[int] = None
+    ):
         # check
         func_names = [func.__name__ for func in functions]
         assert len(func_names) == len(set(func_names)), "Function names must be unique."
 
         callable_functions = [func_to_callable_function(func) for func in functions]
         self.callable_functions_dict: dict[str, CallableFunction] = {func.name: func for func in callable_functions}
-        self.max_func_calls = None
-        self.funcs_called_n_times = 0
+        self.max_func_calls = max_func_calls
+        self.max_tokens_used = max_tokens_used
 
     def call_function(self, func_name: str, **kwargs):
         """Call a function by name with the given kwargs.
@@ -68,7 +70,7 @@ class FunctionManager:
         """Query the OpenAI API with the given kwargs."""
         messages = [{"role": "user", "content": query}]
         response = None
-        state = QueryState()
+        state = QueryState(max_func_calls=self.max_func_calls, max_tokens_used=self.max_tokens_used)
         # stop conditions
         args = dict(
             model=model,
