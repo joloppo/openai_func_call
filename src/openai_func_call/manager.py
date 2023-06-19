@@ -40,6 +40,7 @@ class QueryState(BaseModel):
 
 class FunctionManager:
     max_func_calls: Optional[int]
+    max_token_calls: Optional[int]
 
     def __init__(
         self, functions: list[Callable], max_func_calls: Optional[int] = None, max_tokens_used: Optional[int] = None
