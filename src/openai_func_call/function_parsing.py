@@ -2,8 +2,7 @@ from inspect import signature
 from typing import Callable, Optional
 from warnings import warn
 
-from docstring_parser import parse, Docstring
-
+from docstring_parser import Docstring, parse
 from pydantic import create_model
 
 

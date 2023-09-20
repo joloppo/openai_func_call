@@ -5,8 +5,7 @@ from typing import Callable, Optional
 import openai
 from pydantic import BaseModel
 
-from openai_func_call import func_to_callable_function
-from openai_func_call.assembly import CallableFunction
+from openai_func_call.assembly import CallableFunction, func_to_callable_function
 from openai_func_call.schemas import FinishReason
 
 logger = logging.getLogger(__name__)

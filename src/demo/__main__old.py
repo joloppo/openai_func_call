@@ -1,5 +1,6 @@
-import openai
 import json
+
+import openai
 
 
 # Example dummy function hard coded to return the same weather

@@ -1,7 +1,6 @@
+import json
 from enum import Enum
 from typing import Literal
-
-import json
 
 from openai_func_call.manager import FunctionManager
 
