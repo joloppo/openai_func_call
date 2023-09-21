@@ -36,7 +36,7 @@ def get_viable_docstring(func: Callable) -> Docstring:
     # check that every parameter of function is in docstring
     for param_name in signature(func).parameters.keys():
         if param_name not in [param.arg_name for param in parse(func.__doc__).params]:
-            # TODO: API might not need a description for ever parameter
+            # TODO: API might not need a description for every parameter
             raise ValueError(f"Docstring in function '{func.__name__}' missing parameter: {param_name}")
 
     # check that every parameter has a description
