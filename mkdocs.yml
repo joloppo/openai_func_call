@@ -1,0 +1,64 @@
+site_name: openai-ringring
+theme:
+  name: material
+  features:
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+  language: en
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: lime
+  logo: logo.png
+  favicon: logo_white.png
+
+nav:
+  - index.md
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+        options:
+          docstring_section_style: table
+  - social
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/joloppo
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/joscha-gutjahr/
+  generator: false
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+copyright: |
+  &copy; 2023 <a href="https://github.com/joloppo"  target="_blank" rel="noopener">Joscha Gutjahr</a>

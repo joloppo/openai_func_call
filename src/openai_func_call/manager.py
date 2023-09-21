@@ -44,6 +44,7 @@ class FunctionManager:
     def __init__(
         self, functions: list[Callable], max_func_calls: Optional[int] = None, max_tokens_used: Optional[int] = None
     ):
+        """Create a function manager with the given functions."""
         # check
         func_names = [func.__name__ for func in functions]
         assert len(func_names) == len(set(func_names)), "Function names must be unique."
